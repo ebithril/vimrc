@@ -13,13 +13,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-syntastic/syntastic'
-
-Plugin 'LucHermitte/lh-vim-lib'
-Plugin 'LucHermitte/lh-tags'
-Plugin 'LucHermitte/lh-dev'
-Plugin 'LucHermitte/lh-brackets'
-Plugin 'LucHermitte/lh-cpp'
-Plugin 'LucHermitte/vim-refactor'
+Plugin 'leafgarland/typescript-vim'
 call vundle#end()            " required
 
 filetype plugin on
