@@ -12,7 +12,11 @@ Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'altercation/vim-colors-solarized'
+
+" Syntax checking plugin
 Plugin 'vim-syntastic/syntastic'
+
+" Syntax highlighting plugins
 Plugin 'leafgarland/typescript-vim'
 call vundle#end()            " required
 
@@ -57,7 +61,8 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+vnoremap . :normal.<CR>
+
 " Disable all error bells
 set noeb vb t_vb=
 autocmd GUIEnter * set vb t_vb=
-
