@@ -1,0 +1,17 @@
+:nmap <S-h> :vsc Window.MovetoPreviousTabGroup<CR>
+:nmap <S-l> :vsc Window.MovetoNextTabGroup<CR>
+
+:nmap <,>s :vsc VAssistX.FindSymbolDialog<CR>
+:nmap <,>o :vsc VAssistX.OpenFileInSolutionDialog<CR>
+:nmap <,>c :vsc VassistX.RefactorCreateImplementation<CR>
+:nmap <,>e :vsc VassistX.RefactorExtractMethod<CR>
+:nmap <,>r :vsc VassistX.RefactorRename<CR>
+:nmap <,>i :vsc VassistX.RefactorAddInclude<CR>
+:nmap <,>t :vsc VassistX.RefactorChangeSignature<CR>
+
+:nnoremap <C-j> <C-w>j
+:nnoremap <C-k> <C-w>k
+:nnoremap <C-l> <C-w>l
+:nnoremap <C-h> <C-w>h
+
+vnoremap . :normal .<CR>
