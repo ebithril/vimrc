@@ -14,6 +14,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'rust-lang/rust.vim'
 call vundle#end()            " required
 
 filetype plugin on
