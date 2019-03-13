@@ -9,13 +9,17 @@ call vundle#begin('$USERPROFILE/.vim/bundle')
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'tpope/vim-fugitive'
-" Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'soramugi/auto-ctags.vim'
+
+" Looks
 Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'altercation/vim-colors-solarized'
+
+" Airline
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'wincent/command-t'
 
 " Syntax checking plugin
 Plugin 'vim-syntastic/syntastic'
@@ -34,6 +38,9 @@ set guioptions -=r
 set guioptions -=L
 set colorcolumn=120
 
+" Add some padding
+set foldcolumn=10
+
 " Use dark solarizes as the theme
 set background=dark
 colorscheme solarized
@@ -42,6 +49,12 @@ colorscheme solarized
 set tabstop=4
 set noexpandtab
 set shiftwidth=4
+
+" setup ctrlp
+set wildignore+=*.pyc
+
+" setup auto_ctags
+let g:auto_ctags = 1
 
 " setup airline with solarized theme and showing basic git stuff
 let g:airline_theme='solarized'
@@ -62,10 +75,11 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = '☰'
 let g:airline_symbols.maxlinenr = ''
 
+
 " Setup rainbow braces to do their magic in making all code tons more readable
 let g:rbpt_loadcmd_toggle = 0
 
-set guifont=Source\ Code\ Pro\ for\ Powerline:h10:cANSI
+set guifont=Inconsolata\ for\ Powerline:h13:cANSI
 
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
@@ -74,12 +88,16 @@ au Syntax * RainbowParenthesesLoadBraces
 au Syntax * RainbowParenthesesLoadChevrons
 
 " Keymaps
+let mapleader = ","
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 vnoremap . :normal.<CR>
+
+nmap <leader>o :CtrlP<CR>
+nmap <leader>s :CtrlPTag<CR>
 
 " Disable all error bells
 set noeb vb t_vb=
