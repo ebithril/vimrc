@@ -1,3 +1,5 @@
+set encoding=utf-8
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -7,18 +9,19 @@ call vundle#begin('$USERPROFILE/.vim/bundle')
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'tpope/vim-fugitive'
-Plugin 'ctrlpvim/ctrlp.vim'
+" Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'wincent/command-t'
 
 " Syntax checking plugin
 Plugin 'vim-syntastic/syntastic'
 
 " Syntax highlighting plugins
 Plugin 'leafgarland/typescript-vim'
-Plugin 'rust-lang/rust.vim'
 call vundle#end()            " required
 
 filetype plugin on
@@ -29,7 +32,7 @@ set guioptions -=m
 set guioptions -=T
 set guioptions -=r
 set guioptions -=L
-set colorcolumn=100
+set colorcolumn=120
 
 " Use dark solarizes as the theme
 set background=dark
@@ -41,14 +44,28 @@ set noexpandtab
 set shiftwidth=4
 
 " setup airline with solarized theme and showing basic git stuff
-let g:airline_extensions = ['branch', 'tabline']
 let g:airline_theme='solarized'
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
 let g:airline_theme='dark'
+let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+	let g:airline_symbols = {}
+endif
+
+" powerline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = '☰'
+let g:airline_symbols.maxlinenr = ''
 
 " Setup rainbow braces to do their magic in making all code tons more readable
 let g:rbpt_loadcmd_toggle = 0
+
+set guifont=Source\ Code\ Pro\ for\ Powerline:h10:cANSI
 
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
@@ -67,3 +84,4 @@ vnoremap . :normal.<CR>
 " Disable all error bells
 set noeb vb t_vb=
 autocmd GUIEnter * set vb t_vb=
+
